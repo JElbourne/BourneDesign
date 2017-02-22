@@ -15,5 +15,6 @@ RSpec.describe Project, type: :model do
 
   describe "associations" do
     it { should belong_to(:project_type) }
+    it { should have_many(:attachments) }
   end
 end

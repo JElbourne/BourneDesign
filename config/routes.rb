@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :attachments
   resources :projects
   resources :project_types
   devise_for :members
