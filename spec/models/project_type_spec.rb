@@ -10,7 +10,7 @@ RSpec.describe ProjectType, type: :model do
   end
 
   describe "associations" do
-    #it { should have_many(:projects) }
+    it { should have_many(:projects) }
     it { should have_many(:fields) }
   end
 end

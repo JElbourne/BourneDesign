@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Full name:</strong>
+  <%= @project.full_name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @project.email %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @project.phone %>
+</p>
+
+<p>
+  <strong>Full address:</strong>
+  <%= @project.full_address %>
+</p>
+
+<p>
+  <strong>Properties:</strong>
+  <%= @project.properties %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @project.description %>
+</p>
+
+<p>
+  <strong>Project type:</strong>
+  <%= @project.project_type_id %>
+</p>
+
+<%= link_to 'Edit', edit_project_path(@project) %> |
+<%= link_to 'Back', projects_path %>
