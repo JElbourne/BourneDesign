@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170222203619) do
+ActiveRecord::Schema.define(version: 20170222204755) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,6 +33,19 @@ ActiveRecord::Schema.define(version: 20170222203619) do
     t.index ["reset_password_token"], name: "index_members_on_reset_password_token", unique: true, using: :btree
   end
 
+  create_table "project_fields", force: :cascade do |t|
+    t.string   "name"
+    t.string   "field_type"
+    t.string   "unit"
+    t.boolean  "required"
+    t.text     "description"
+    t.text     "icon_data"
+    t.integer  "project_type_id"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.index ["project_type_id"], name: "index_project_fields_on_project_type_id", using: :btree
+  end
+
   create_table "project_types", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
@@ -40,4 +53,5 @@ ActiveRecord::Schema.define(version: 20170222203619) do
     t.index ["name"], name: "index_project_types_on_name", using: :btree
   end
 
+  add_foreign_key "project_fields", "project_types"
 end
